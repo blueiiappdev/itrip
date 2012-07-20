@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28C66804156F3E60008E82CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C66803156F3E60008E82CF /* UIKit.framework */; };
+		28C66806156F3E60008E82CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C66805156F3E60008E82CF /* Foundation.framework */; };
+		28C66808156F3E60008E82CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C66807156F3E60008E82CF /* CoreGraphics.framework */; };
+		28C6680E156F3E60008E82CF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28C6680C156F3E60008E82CF /* InfoPlist.strings */; };
+		28C66810156F3E60008E82CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6680F156F3E60008E82CF /* main.m */; };
+		28C66814156F3E60008E82CF /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C66813156F3E60008E82CF /* PSAppDelegate.m */; };
+		28C66817156F3E60008E82CF /* PSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C66816156F3E60008E82CF /* PSViewController.m */; };
+		28C6681A156F3E60008E82CF /* PSViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28C66818156F3E60008E82CF /* PSViewController_iPhone.xib */; };
+		28C6681D156F3E60008E82CF /* PSViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28C6681B156F3E60008E82CF /* PSViewController_iPad.xib */; };
+		28C66827156F3E84008E82CF /* PSCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C66824156F3E84008E82CF /* PSCollectionView.m */; };
+		28C66828156F3E84008E82CF /* PSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C66826156F3E84008E82CF /* PSCollectionViewCell.m */; };
+		28C6682C156F4073008E82CF /* PSBroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6682B156F4073008E82CF /* PSBroView.m */; };
+		F60A0D5815A594B400085AAA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60A0D5715A594B400085AAA /* MapKit.framework */; };
+		F629F6CA15A4507A00AB391F /* DSTripDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F629F6C915A4507A00AB391F /* DSTripDetailViewController.m */; };
+		F663A23115A2072B00CF635C /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F663A22915A2072B00CF635C /* blueArrow.png */; };
+		F663A23215A2072B00CF635C /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F663A22B15A2072B00CF635C /* EGORefreshTableHeaderView.m */; };
+		F663A23315A2072B00CF635C /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = F663A22D15A2072B00CF635C /* CHANGELOG.md */; };
+		F663A23415A2072B00CF635C /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F663A22F15A2072B00CF635C /* JSONKit.m */; };
+		F663A23515A2072B00CF635C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F663A23015A2072B00CF635C /* README.md */; };
+		F663A23715A211D500CF635C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663A23615A211D500CF635C /* QuartzCore.framework */; };
+		F663A25E15A32E8500CF635C /* LoadingMoreFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F663A25D15A32E8500CF635C /* LoadingMoreFooterView.m */; };
+		F68DF0C315B8699D00555D1E /* DSTripDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F68DF0C215B8699D00555D1E /* DSTripDetailView.xib */; };
+		F6B12C4315AA9101003B6082 /* itrip57.png in Resources */ = {isa = PBXBuildFile; fileRef = F6B12C4115AA9101003B6082 /* itrip57.png */; };
+		F6B12C4415AA9101003B6082 /* itrip72.png in Resources */ = {isa = PBXBuildFile; fileRef = F6B12C4215AA9101003B6082 /* itrip72.png */; };
+		F6B12C5715AA9FAA003B6082 /* itrip57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6B12C5615AA9FAA003B6082 /* itrip57@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		28C667FF156F3E60008E82CF /* iTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28C66803156F3E60008E82CF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		28C66805156F3E60008E82CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		28C66807156F3E60008E82CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28C6680B156F3E60008E82CF /* iTrip-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTrip-Info.plist"; sourceTree = "<group>"; };
+		28C6680D156F3E60008E82CF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		28C6680F156F3E60008E82CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		28C66811156F3E60008E82CF /* iTrip-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iTrip-Prefix.pch"; sourceTree = "<group>"; };
+		28C66812156F3E60008E82CF /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
+		28C66813156F3E60008E82CF /* PSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAppDelegate.m; sourceTree = "<group>"; };
+		28C66815156F3E60008E82CF /* PSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSViewController.h; sourceTree = "<group>"; };
+		28C66816156F3E60008E82CF /* PSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSViewController.m; sourceTree = "<group>"; };
+		28C66819156F3E60008E82CF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PSViewController_iPhone.xib; sourceTree = "<group>"; };
+		28C6681C156F3E60008E82CF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/PSViewController_iPad.xib; sourceTree = "<group>"; };
+		28C66823156F3E84008E82CF /* PSCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCollectionView.h; path = ../PSCollectionView.h; sourceTree = "<group>"; };
+		28C66824156F3E84008E82CF /* PSCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCollectionView.m; path = ../PSCollectionView.m; sourceTree = "<group>"; };
+		28C66825156F3E84008E82CF /* PSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCollectionViewCell.h; path = ../PSCollectionViewCell.h; sourceTree = "<group>"; };
+		28C66826156F3E84008E82CF /* PSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCollectionViewCell.m; path = ../PSCollectionViewCell.m; sourceTree = "<group>"; };
+		28C6682A156F4073008E82CF /* PSBroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSBroView.h; sourceTree = "<group>"; };
+		28C6682B156F4073008E82CF /* PSBroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSBroView.m; sourceTree = "<group>"; };
+		F60A0D5715A594B400085AAA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F629F6C815A4507A00AB391F /* DSTripDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTripDetailViewController.h; sourceTree = "<group>"; };
+		F629F6C915A4507A00AB391F /* DSTripDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTripDetailViewController.m; sourceTree = "<group>"; };
+		F663A22915A2072B00CF635C /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		F663A22A15A2072B00CF635C /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		F663A22B15A2072B00CF635C /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		F663A22D15A2072B00CF635C /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		F663A22E15A2072B00CF635C /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		F663A22F15A2072B00CF635C /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		F663A23015A2072B00CF635C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		F663A23615A211D500CF635C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F663A25C15A32E8500CF635C /* LoadingMoreFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingMoreFooterView.h; sourceTree = "<group>"; };
+		F663A25D15A32E8500CF635C /* LoadingMoreFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingMoreFooterView.m; sourceTree = "<group>"; };
+		F68DF0C215B8699D00555D1E /* DSTripDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSTripDetailView.xib; sourceTree = "<group>"; };
+		F6B12C4115AA9101003B6082 /* itrip57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = itrip57.png; path = ../itrip57.png; sourceTree = "<group>"; };
+		F6B12C4215AA9101003B6082 /* itrip72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = itrip72.png; path = ../itrip72.png; sourceTree = "<group>"; };
+		F6B12C5615AA9FAA003B6082 /* itrip57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "itrip57@2x.png"; path = "../itrip57@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28C667FC156F3E60008E82CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F60A0D5815A594B400085AAA /* MapKit.framework in Frameworks */,
+				F663A23715A211D500CF635C /* QuartzCore.framework in Frameworks */,
+				28C66804156F3E60008E82CF /* UIKit.framework in Frameworks */,
+				28C66806156F3E60008E82CF /* Foundation.framework in Frameworks */,
+				28C66808156F3E60008E82CF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28C667F4156F3E60008E82CF = {
+			isa = PBXGroup;
+			children = (
+				F6B12C4115AA9101003B6082 /* itrip57.png */,
+				F6B12C5615AA9FAA003B6082 /* itrip57@2x.png */,
+				F6B12C4215AA9101003B6082 /* itrip72.png */,
+				28C66829156F3E88008E82CF /* PSCollectionView */,
+				28C66809156F3E60008E82CF /* TripBoard */,
+				F663A22715A2072B00CF635C /* ThirdParty */,
+				28C66802156F3E60008E82CF /* Frameworks */,
+				28C66800156F3E60008E82CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28C66800156F3E60008E82CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28C667FF156F3E60008E82CF /* iTrip.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28C66802156F3E60008E82CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F60A0D5715A594B400085AAA /* MapKit.framework */,
+				F663A23615A211D500CF635C /* QuartzCore.framework */,
+				28C66803156F3E60008E82CF /* UIKit.framework */,
+				28C66805156F3E60008E82CF /* Foundation.framework */,
+				28C66807156F3E60008E82CF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28C66809156F3E60008E82CF /* TripBoard */ = {
+			isa = PBXGroup;
+			children = (
+				F68DF0C215B8699D00555D1E /* DSTripDetailView.xib */,
+				28C66812156F3E60008E82CF /* PSAppDelegate.h */,
+				28C66813156F3E60008E82CF /* PSAppDelegate.m */,
+				28C66815156F3E60008E82CF /* PSViewController.h */,
+				28C66816156F3E60008E82CF /* PSViewController.m */,
+				28C6682A156F4073008E82CF /* PSBroView.h */,
+				28C6682B156F4073008E82CF /* PSBroView.m */,
+				28C66818156F3E60008E82CF /* PSViewController_iPhone.xib */,
+				28C6681B156F3E60008E82CF /* PSViewController_iPad.xib */,
+				28C6680A156F3E60008E82CF /* Supporting Files */,
+				F629F6C815A4507A00AB391F /* DSTripDetailViewController.h */,
+				F629F6C915A4507A00AB391F /* DSTripDetailViewController.m */,
+			);
+			name = TripBoard;
+			path = BroBoard;
+			sourceTree = "<group>";
+		};
+		28C6680A156F3E60008E82CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				28C6680B156F3E60008E82CF /* iTrip-Info.plist */,
+				28C6680C156F3E60008E82CF /* InfoPlist.strings */,
+				28C6680F156F3E60008E82CF /* main.m */,
+				28C66811156F3E60008E82CF /* iTrip-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		28C66829156F3E88008E82CF /* PSCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				28C66823156F3E84008E82CF /* PSCollectionView.h */,
+				28C66824156F3E84008E82CF /* PSCollectionView.m */,
+				28C66825156F3E84008E82CF /* PSCollectionViewCell.h */,
+				28C66826156F3E84008E82CF /* PSCollectionViewCell.m */,
+			);
+			name = PSCollectionView;
+			sourceTree = "<group>";
+		};
+		F663A22715A2072B00CF635C /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				F663A25B15A32E8500CF635C /* LoadingMoreFooterView */,
+				F663A22815A2072B00CF635C /* EGORefreshTableHeaderView */,
+				F663A22C15A2072B00CF635C /* JSONKit */,
+			);
+			name = ThirdParty;
+			path = ../ThirdParty;
+			sourceTree = "<group>";
+		};
+		F663A22815A2072B00CF635C /* EGORefreshTableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				F663A22915A2072B00CF635C /* blueArrow.png */,
+				F663A22A15A2072B00CF635C /* EGORefreshTableHeaderView.h */,
+				F663A22B15A2072B00CF635C /* EGORefreshTableHeaderView.m */,
+			);
+			path = EGORefreshTableHeaderView;
+			sourceTree = "<group>";
+		};
+		F663A22C15A2072B00CF635C /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				F663A22D15A2072B00CF635C /* CHANGELOG.md */,
+				F663A22E15A2072B00CF635C /* JSONKit.h */,
+				F663A22F15A2072B00CF635C /* JSONKit.m */,
+				F663A23015A2072B00CF635C /* README.md */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		F663A25B15A32E8500CF635C /* LoadingMoreFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				F663A25C15A32E8500CF635C /* LoadingMoreFooterView.h */,
+				F663A25D15A32E8500CF635C /* LoadingMoreFooterView.m */,
+			);
+			path = LoadingMoreFooterView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28C667FE156F3E60008E82CF /* iTrip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28C66820156F3E60008E82CF /* Build configuration list for PBXNativeTarget "iTrip" */;
+			buildPhases = (
+				28C667FB156F3E60008E82CF /* Sources */,
+				28C667FC156F3E60008E82CF /* Frameworks */,
+				28C667FD156F3E60008E82CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iTrip;
+			productName = BroBoard;
+			productReference = 28C667FF156F3E60008E82CF /* iTrip.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28C667F6156F3E60008E82CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PS;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 28C667F9156F3E60008E82CF /* Build configuration list for PBXProject "iTrip" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 28C667F4156F3E60008E82CF;
+			productRefGroup = 28C66800156F3E60008E82CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28C667FE156F3E60008E82CF /* iTrip */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28C667FD156F3E60008E82CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28C6680E156F3E60008E82CF /* InfoPlist.strings in Resources */,
+				28C6681A156F3E60008E82CF /* PSViewController_iPhone.xib in Resources */,
+				28C6681D156F3E60008E82CF /* PSViewController_iPad.xib in Resources */,
+				F663A23115A2072B00CF635C /* blueArrow.png in Resources */,
+				F663A23315A2072B00CF635C /* CHANGELOG.md in Resources */,
+				F663A23515A2072B00CF635C /* README.md in Resources */,
+				F6B12C4315AA9101003B6082 /* itrip57.png in Resources */,
+				F6B12C4415AA9101003B6082 /* itrip72.png in Resources */,
+				F6B12C5715AA9FAA003B6082 /* itrip57@2x.png in Resources */,
+				F68DF0C315B8699D00555D1E /* DSTripDetailView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28C667FB156F3E60008E82CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28C66810156F3E60008E82CF /* main.m in Sources */,
+				28C66814156F3E60008E82CF /* PSAppDelegate.m in Sources */,
+				28C66817156F3E60008E82CF /* PSViewController.m in Sources */,
+				28C66827156F3E84008E82CF /* PSCollectionView.m in Sources */,
+				28C66828156F3E84008E82CF /* PSCollectionViewCell.m in Sources */,
+				28C6682C156F4073008E82CF /* PSBroView.m in Sources */,
+				F663A23215A2072B00CF635C /* EGORefreshTableHeaderView.m in Sources */,
+				F663A23415A2072B00CF635C /* JSONKit.m in Sources */,
+				F663A25E15A32E8500CF635C /* LoadingMoreFooterView.m in Sources */,
+				F629F6CA15A4507A00AB391F /* DSTripDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		28C6680C156F3E60008E82CF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28C6680D156F3E60008E82CF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		28C66818156F3E60008E82CF /* PSViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28C66819156F3E60008E82CF /* en */,
+			);
+			name = PSViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		28C6681B156F3E60008E82CF /* PSViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28C6681C156F3E60008E82CF /* en */,
+			);
+			name = PSViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28C6681E156F3E60008E82CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		28C6681F156F3E60008E82CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28C66821156F3E60008E82CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BroBoard/iTrip-Prefix.pch";
+				INFOPLIST_FILE = "BroBoard/iTrip-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		28C66822156F3E60008E82CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					armv6,
+					armv7,
+				);
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BroBoard/iTrip-Prefix.pch";
+				INFOPLIST_FILE = "BroBoard/iTrip-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28C667F9156F3E60008E82CF /* Build configuration list for PBXProject "iTrip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28C6681E156F3E60008E82CF /* Debug */,
+				28C6681F156F3E60008E82CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28C66820156F3E60008E82CF /* Build configuration list for PBXNativeTarget "iTrip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28C66821156F3E60008E82CF /* Debug */,
+				28C66822156F3E60008E82CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28C667F6156F3E60008E82CF /* Project object */;
+}

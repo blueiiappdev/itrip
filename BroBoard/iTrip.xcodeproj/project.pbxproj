@@ -21,11 +21,11 @@
 		28C6682C156F4073008E82CF /* PSBroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C6682B156F4073008E82CF /* PSBroView.m */; };
 		F60A0D5815A594B400085AAA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60A0D5715A594B400085AAA /* MapKit.framework */; };
 		F629F6CA15A4507A00AB391F /* DSTripDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F629F6C915A4507A00AB391F /* DSTripDetailViewController.m */; };
+		F63560B915B9217F00146215 /* DSTripRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = F63560B815B9217F00146215 /* DSTripRecord.m */; };
+		F63560BC15B94CDD00146215 /* DSComment.m in Sources */ = {isa = PBXBuildFile; fileRef = F63560BB15B94CDD00146215 /* DSComment.m */; };
 		F663A23115A2072B00CF635C /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = F663A22915A2072B00CF635C /* blueArrow.png */; };
 		F663A23215A2072B00CF635C /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F663A22B15A2072B00CF635C /* EGORefreshTableHeaderView.m */; };
-		F663A23315A2072B00CF635C /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = F663A22D15A2072B00CF635C /* CHANGELOG.md */; };
 		F663A23415A2072B00CF635C /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F663A22F15A2072B00CF635C /* JSONKit.m */; };
-		F663A23515A2072B00CF635C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F663A23015A2072B00CF635C /* README.md */; };
 		F663A23715A211D500CF635C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F663A23615A211D500CF635C /* QuartzCore.framework */; };
 		F663A25E15A32E8500CF635C /* LoadingMoreFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F663A25D15A32E8500CF635C /* LoadingMoreFooterView.m */; };
 		F68DF0C315B8699D00555D1E /* DSTripDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F68DF0C215B8699D00555D1E /* DSTripDetailView.xib */; };
@@ -58,13 +58,15 @@
 		F60A0D5715A594B400085AAA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F629F6C815A4507A00AB391F /* DSTripDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTripDetailViewController.h; sourceTree = "<group>"; };
 		F629F6C915A4507A00AB391F /* DSTripDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTripDetailViewController.m; sourceTree = "<group>"; };
+		F63560B715B9217F00146215 /* DSTripRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTripRecord.h; sourceTree = "<group>"; };
+		F63560B815B9217F00146215 /* DSTripRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTripRecord.m; sourceTree = "<group>"; };
+		F63560BA15B94CDD00146215 /* DSComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSComment.h; sourceTree = "<group>"; };
+		F63560BB15B94CDD00146215 /* DSComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSComment.m; sourceTree = "<group>"; };
 		F663A22915A2072B00CF635C /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
 		F663A22A15A2072B00CF635C /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		F663A22B15A2072B00CF635C /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
-		F663A22D15A2072B00CF635C /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
 		F663A22E15A2072B00CF635C /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		F663A22F15A2072B00CF635C /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
-		F663A23015A2072B00CF635C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		F663A23615A211D500CF635C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F663A25C15A32E8500CF635C /* LoadingMoreFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingMoreFooterView.h; sourceTree = "<group>"; };
 		F663A25D15A32E8500CF635C /* LoadingMoreFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingMoreFooterView.m; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 		28C66809156F3E60008E82CF /* TripBoard */ = {
 			isa = PBXGroup;
 			children = (
+				F63560B615B9213000146215 /* Model */,
 				F68DF0C215B8699D00555D1E /* DSTripDetailView.xib */,
 				28C66812156F3E60008E82CF /* PSAppDelegate.h */,
 				28C66813156F3E60008E82CF /* PSAppDelegate.m */,
@@ -166,6 +169,17 @@
 			name = PSCollectionView;
 			sourceTree = "<group>";
 		};
+		F63560B615B9213000146215 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F63560B715B9217F00146215 /* DSTripRecord.h */,
+				F63560B815B9217F00146215 /* DSTripRecord.m */,
+				F63560BA15B94CDD00146215 /* DSComment.h */,
+				F63560BB15B94CDD00146215 /* DSComment.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		F663A22715A2072B00CF635C /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,10 +204,8 @@
 		F663A22C15A2072B00CF635C /* JSONKit */ = {
 			isa = PBXGroup;
 			children = (
-				F663A22D15A2072B00CF635C /* CHANGELOG.md */,
 				F663A22E15A2072B00CF635C /* JSONKit.h */,
 				F663A22F15A2072B00CF635C /* JSONKit.m */,
-				F663A23015A2072B00CF635C /* README.md */,
 			);
 			path = JSONKit;
 			sourceTree = "<group>";
@@ -233,8 +245,9 @@
 		28C667F6156F3E60008E82CF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = PS;
+				CLASSPREFIX = DS;
 				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = DreamStart;
 			};
 			buildConfigurationList = 28C667F9156F3E60008E82CF /* Build configuration list for PBXProject "iTrip" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -262,8 +275,6 @@
 				28C6681A156F3E60008E82CF /* PSViewController_iPhone.xib in Resources */,
 				28C6681D156F3E60008E82CF /* PSViewController_iPad.xib in Resources */,
 				F663A23115A2072B00CF635C /* blueArrow.png in Resources */,
-				F663A23315A2072B00CF635C /* CHANGELOG.md in Resources */,
-				F663A23515A2072B00CF635C /* README.md in Resources */,
 				F6B12C4315AA9101003B6082 /* itrip57.png in Resources */,
 				F6B12C4415AA9101003B6082 /* itrip72.png in Resources */,
 				F6B12C5715AA9FAA003B6082 /* itrip57@2x.png in Resources */,
@@ -288,6 +299,8 @@
 				F663A23415A2072B00CF635C /* JSONKit.m in Sources */,
 				F663A25E15A32E8500CF635C /* LoadingMoreFooterView.m in Sources */,
 				F629F6CA15A4507A00AB391F /* DSTripDetailViewController.m in Sources */,
+				F63560B915B9217F00146215 /* DSTripRecord.m in Sources */,
+				F63560BC15B94CDD00146215 /* DSComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

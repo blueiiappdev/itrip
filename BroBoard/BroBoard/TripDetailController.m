@@ -57,7 +57,7 @@
  
  */
 
-#import "RootViewController.h"
+#import "TripDetailController.h"
 #import "ASIHTTPRequest.h"
 #import "DSURLHelper.h"
 #import "JSONKit.h"
@@ -67,7 +67,7 @@
 
 #pragma mark -
 
-@interface RootViewController ()
+@interface TripDetailController ()
 
 - (void)requestFinished:(ASIHTTPRequest *)request;
 - (void)requestFailed:(ASIHTTPRequest *)request;
@@ -76,7 +76,7 @@
 
 @end
 
-@implementation RootViewController
+@implementation TripDetailController
 
 @synthesize tripRecord = m_tripRecord;
 @synthesize tripId = m_tripId;

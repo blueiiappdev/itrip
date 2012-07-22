@@ -11,7 +11,7 @@
 #import "PSBroView.h"
 #import "JSONKit.h"
 #import "DSTripDetailViewController.h"
-#import "RootViewController.h"
+#import "TripDetailController.h"
 #import "DSURLHelper.h"
 
 /**
@@ -184,7 +184,7 @@ loadingBefore = m_loadingBefore;
 //   [d setValue:((PSBroView*)view).imageView.image forKey:@"image"];
 //   tripDetailController.tripItem = d;
    
-   RootViewController* tripDetailController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+   TripDetailController* tripDetailController = [[TripDetailController alloc] initWithNibName:@"RootViewController" bundle:nil];
    tripDetailController.tripId = [item objectForKey:@"url"];
    
    [navController pushViewController:tripDetailController animated:YES];

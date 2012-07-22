@@ -24,8 +24,8 @@
 		F63560B915B9217F00146215 /* DSTripRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = F63560B815B9217F00146215 /* DSTripRecord.m */; };
 		F63560BC15B94CDD00146215 /* DSComment.m in Sources */ = {isa = PBXBuildFile; fileRef = F63560BB15B94CDD00146215 /* DSComment.m */; };
 		F63560D615BA568A00146215 /* DetailTripHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63560D215BA568A00146215 /* DetailTripHeaderCell.xib */; };
-		F63560D715BA568A00146215 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63560D415BA568A00146215 /* RootViewController.xib */; };
-		F63560D815BBBC7F00146215 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F63560D115BA560300146215 /* RootViewController.m */; };
+		F63560D715BA568A00146215 /* TripDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63560D415BA568A00146215 /* TripDetailController.xib */; };
+		F63560D815BBBC7F00146215 /* TripDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = F63560D115BA560300146215 /* TripDetailController.m */; };
 		F63560D915BBBC9400146215 /* IconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F63560CD15BA560300146215 /* IconDownloader.m */; };
 		F63560F415BBCD7000146215 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = F63560DC15BBCD7000146215 /* ASIAuthenticationDialog.m */; };
 		F63560F515BBCD7000146215 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = F63560DF15BBCD7000146215 /* ASIDataCompressor.m */; };
@@ -84,10 +84,10 @@
 		F63560BB15B94CDD00146215 /* DSComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSComment.m; sourceTree = "<group>"; };
 		F63560CC15BA560300146215 /* IconDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IconDownloader.h; sourceTree = "<group>"; };
 		F63560CD15BA560300146215 /* IconDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IconDownloader.m; sourceTree = "<group>"; };
-		F63560D015BA560300146215 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		F63560D115BA560300146215 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		F63560D015BA560300146215 /* TripDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TripDetailController.h; sourceTree = "<group>"; };
+		F63560D115BA560300146215 /* TripDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TripDetailController.m; sourceTree = "<group>"; };
 		F63560D315BA568A00146215 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailTripHeaderCell.xib; sourceTree = "<group>"; };
-		F63560D515BA568A00146215 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		F63560D515BA568A00146215 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TripDetailController.xib; sourceTree = "<group>"; };
 		F63560DB15BBCD7000146215 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		F63560DC15BBCD7000146215 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		F63560DD15BBCD7000146215 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -202,8 +202,8 @@
 				28C66813156F3E60008E82CF /* PSAppDelegate.m */,
 				F63560CC15BA560300146215 /* IconDownloader.h */,
 				F63560CD15BA560300146215 /* IconDownloader.m */,
-				F63560D015BA560300146215 /* RootViewController.h */,
-				F63560D115BA560300146215 /* RootViewController.m */,
+				F63560D015BA560300146215 /* TripDetailController.h */,
+				F63560D115BA560300146215 /* TripDetailController.m */,
 				28C66815156F3E60008E82CF /* PSViewController.h */,
 				28C66816156F3E60008E82CF /* PSViewController.m */,
 				28C6682A156F4073008E82CF /* PSBroView.h */,
@@ -214,7 +214,7 @@
 				F629F6C815A4507A00AB391F /* DSTripDetailViewController.h */,
 				F629F6C915A4507A00AB391F /* DSTripDetailViewController.m */,
 				F63560D215BA568A00146215 /* DetailTripHeaderCell.xib */,
-				F63560D415BA568A00146215 /* RootViewController.xib */,
+				F63560D415BA568A00146215 /* TripDetailController.xib */,
 				F68DF0C215B8699D00555D1E /* DSTripDetailView.xib */,
 			);
 			name = TripBoard;
@@ -404,7 +404,7 @@
 				F6B12C5715AA9FAA003B6082 /* itrip57@2x.png in Resources */,
 				F68DF0C315B8699D00555D1E /* DSTripDetailView.xib in Resources */,
 				F63560D615BA568A00146215 /* DetailTripHeaderCell.xib in Resources */,
-				F63560D715BA568A00146215 /* RootViewController.xib in Resources */,
+				F63560D715BA568A00146215 /* TripDetailController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F63560D915BBBC9400146215 /* IconDownloader.m in Sources */,
-				F63560D815BBBC7F00146215 /* RootViewController.m in Sources */,
+				F63560D815BBBC7F00146215 /* TripDetailController.m in Sources */,
 				28C66810156F3E60008E82CF /* main.m in Sources */,
 				28C66814156F3E60008E82CF /* PSAppDelegate.m in Sources */,
 				28C66817156F3E60008E82CF /* PSViewController.m in Sources */,
@@ -478,12 +478,12 @@
 			name = DetailTripHeaderCell.xib;
 			sourceTree = "<group>";
 		};
-		F63560D415BA568A00146215 /* RootViewController.xib */ = {
+		F63560D415BA568A00146215 /* TripDetailController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F63560D515BA568A00146215 /* en */,
 			);
-			name = RootViewController.xib;
+			name = TripDetailController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

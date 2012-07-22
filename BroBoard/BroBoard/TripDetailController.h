@@ -61,7 +61,7 @@
 #import "IconDownloader.h"
 #import "DSTripRecord.h"
 
-@interface RootViewController : UITableViewController <UIScrollViewDelegate, IconDownloaderDelegate>
+@interface TripDetailController : UITableViewController <UIScrollViewDelegate, IconDownloaderDelegate>
 {
    NSString* m_selftripId;
    DSTripRecord* m_tripRecord;

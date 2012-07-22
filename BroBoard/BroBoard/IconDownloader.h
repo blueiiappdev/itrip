@@ -51,7 +51,7 @@
  */
 
 @class DSTripDailyRecord;
-@class RootViewController;
+@class TripDetailController;
 
 @protocol IconDownloaderDelegate;
 

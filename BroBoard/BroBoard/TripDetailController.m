@@ -111,7 +111,7 @@
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
-   NSError *error = [request error];
+   //NSError *error = [request error];
 }
 
 - (void)dealloc

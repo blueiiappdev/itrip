@@ -10,25 +10,34 @@
 
 @interface DSTripDailyRecord : NSObject
 {
+   NSString*         m_id;
    NSString*         m_title;
    NSDate*           m_date;
    NSString*         m_intro;
    NSString*         m_photoUrl;
+   UIImage*          m_photo;
    
    NSMutableArray*   m_comments;
-   int               m_commmentCount;
+   int               m_commentCount;
+   int               m_favCount;
 }
 
+@property(nonatomic, retain) NSString* tid;
 @property(nonatomic, retain) NSString* title;
 @property(nonatomic, retain) NSDate* date;
 @property(nonatomic, retain) NSString* intro;
 @property(nonatomic, retain) NSString* photoUrl;
+@property(nonatomic, retain) UIImage* photo;
 @property(atomic, assign) int commentCount;
-@property(nonatomic, readonly) NSMutableArray* comments;
+@property(atomic, assign) int favCount;
+@property(nonatomic, retain) NSMutableArray* comments;
+
+-(id) initWithMap:(NSDictionary*)map;
 @end
 
 @interface DSTripRecord : NSObject 
 {
+   NSString*         m_id;
    NSString*         m_title;
    NSString*         m_address;        //TODO: geography info
    
@@ -45,6 +54,7 @@
    NSMutableArray*   m_dailyRecords;
 }
 
+@property(nonatomic, retain) NSString*    tid;
 @property(nonatomic, retain) NSString*    title;
 @property(nonatomic, retain) NSString*    address;
 @property(nonatomic, retain) NSString*    authorId;
@@ -56,9 +66,9 @@
 @property(atomic, assign) int commentCount;
 @property(atomic, assign) int favCount;
 
-@property(nonatomic, readonly) NSMutableArray* dailyRecords;
+@property(nonatomic, retain) NSMutableArray* dailyRecords;
 
--(id) init;
+-(id) initWithMap:(NSDictionary*)map;
 -(void) addDialyRecord:(DSTripDailyRecord*) dailyRecord;
 
 @end

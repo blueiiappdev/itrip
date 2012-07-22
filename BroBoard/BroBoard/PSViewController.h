@@ -11,9 +11,6 @@
 #import "PSCollectionView.h"
 #import "EGORefreshTableHeaderView.h"
 
-//#define kHostUrl  "http://192.168.1.103:3000"
-#define kHostUrl  "http://ramonblog.cloudfoundry.com"
-
 @interface PSViewController : UIViewController <PSCollectionViewDelegate, PSCollectionViewDataSource, EGORefreshTableHeaderDelegate, UISearchBarDelegate>
 {
    BOOL           _connectedSuccess;

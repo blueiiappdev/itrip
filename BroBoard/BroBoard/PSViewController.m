@@ -11,6 +11,8 @@
 #import "PSBroView.h"
 #import "JSONKit.h"
 #import "DSTripDetailViewController.h"
+#import "RootViewController.h"
+#import "DSURLHelper.h"
 
 /**
  This is an example of a controller that uses PSCollectionView
@@ -132,7 +134,7 @@ loadingBefore = m_loadingBefore;
       targetPage = ++_maxPage;
    } 
    
-   NSString* urlStr = [NSString stringWithFormat:@"%@/demos/gallery?page=%d", [NSString stringWithUTF8String: kHostUrl], targetPage];
+   NSString* urlStr = [[DSURLHelper sharedURLHelper] tripBoardGallery:targetPage];
    NSURL *URL = [NSURL URLWithString:urlStr];
    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];   
    [NSURLConnection connectionWithRequest:request delegate:self];
@@ -175,11 +177,15 @@ loadingBefore = m_loadingBefore;
    
    UINavigationController* navController = (UINavigationController*)self.parentViewController;
    navController.navigationBarHidden = NO;
-   DSTripDetailViewController* tripDetailController = [[DSTripDetailViewController alloc] initWithNibName:@"DSTripDetailView" bundle:nil];
-
-   NSMutableDictionary* d = [NSMutableDictionary dictionaryWithDictionary:item];
-   [d setValue:((PSBroView*)view).imageView.image forKey:@"image"];
-   tripDetailController.tripItem = d;
+   
+//   DSTripDetailViewController* tripDetailController = [[DSTripDetailViewController alloc] initWithNibName:@"DSTripDetailView" bundle:nil];
+//
+//   NSMutableDictionary* d = [NSMutableDictionary dictionaryWithDictionary:item];
+//   [d setValue:((PSBroView*)view).imageView.image forKey:@"image"];
+//   tripDetailController.tripItem = d;
+   
+   RootViewController* tripDetailController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+   tripDetailController.tripId = [item objectForKey:@"url"];
    
    [navController pushViewController:tripDetailController animated:YES];
 }
@@ -259,7 +265,7 @@ loadingBefore = m_loadingBefore;
 
 - (void) searchBarSearchButtonClicked:(UISearchBar *)searchBar {
    [self.searchBar endEditing:YES];
-   NSString* urlStr = [NSString stringWithFormat:@"%@/demos/searchgallery?query=%@", [NSString stringWithUTF8String: kHostUrl], searchBar.text];
+   NSString* urlStr = [[DSURLHelper sharedURLHelper] tripBoardSearchGallery: searchBar.text];
    NSURL *URL = [NSURL URLWithString:urlStr];
    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];   
    [NSURLConnection connectionWithRequest:request delegate:self];

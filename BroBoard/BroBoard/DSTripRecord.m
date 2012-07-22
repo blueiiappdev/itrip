@@ -10,18 +10,38 @@
 
 @implementation DSTripDailyRecord
 
-@synthesize title = m_title,
+@synthesize tid = m_id,
+title = m_title,
 date = m_date,
 intro = m_intro,
 photoUrl = m_photoUrl,
-commentCount = m_commmentCount,
-comments = m_comments;
+photo = m_photo,
+commentCount = m_commentCount,
+comments = m_comments,
+favCount = m_favCount;
+
+-(id) initWithMap:(NSDictionary*)map 
+{
+   if (self = [super init])
+   {
+      self.tid = [map objectForKey:@"id"];
+      self.title = [map objectForKey:@"title"];
+      self.date = [map objectForKey:@"date"];
+      self.intro = [map objectForKey:@"intro"];
+      self.photoUrl = [map objectForKey:@"photoUrl"];
+      self.commentCount = [[map objectForKey:@"commentCount"] intValue];
+      self.favCount = [[map objectForKey:@"favCount"] intValue];
+   }
+   return self;
+}
 
 -(void) dealloc {
+   [m_id release];
    [m_title release];
    [m_date release];
    [m_intro release];
    [m_photoUrl release];
+   [m_photo release];
    
    [m_comments release];
    
@@ -32,7 +52,8 @@ comments = m_comments;
 
 @implementation DSTripRecord
 
-@synthesize title = m_title,
+@synthesize tid = m_id,
+title = m_title,
 address = m_address,
 authorId = m_authorId,
 authorName = m_authorName,
@@ -43,14 +64,32 @@ commentCount = m_commentCount,
 favCount = m_favCount,
 dailyRecords = m_dailyRecords;
 
--(id) init {
+-(id) initWithMap:(NSDictionary*)map
+{
    if (self = [super init]) {
-      m_dailyRecords = [[NSMutableArray alloc] initWithCapacity:5];
+      self.tid = [map objectForKey:@"id"];
+      self.title = [map objectForKey:@"title"];
+      self.address = [map objectForKey:@"address"];
+      self.authorId = [map objectForKey:@"authorId"];
+      self.authorName = [map objectForKey:@"authorName"];
+      self.start = [map objectForKey:@"start"];
+      self.end = [map objectForKey:@"end"];
+      self.days = [[map objectForKey:@"days"] intValue];
+      self.commentCount = [[map objectForKey:@"commentCount"] intValue];
+      self.favCount = [[map objectForKey:@"favCount"] intValue];
+      self.dailyRecords = [[NSMutableArray alloc] initWithCapacity:5];
+      NSArray* arr = [map objectForKey:@"dailyRecords"];
+      for (NSDictionary* d in arr)
+      {
+         DSTripDailyRecord* dailyRecord = [[DSTripDailyRecord alloc] initWithMap:d];
+         [self.dailyRecords addObject:dailyRecord];
+      }
    }
    return self;
 }
 
 -(void) dealloc {
+   [m_id release];
    [m_title release];
    [m_address release];
    [m_authorId release];

@@ -11,6 +11,7 @@
  */
 
 #import "PSBroView.h"
+#import "DSURLHelper.h"
 
 #define MARGIN 0
 
@@ -112,7 +113,7 @@ captionLabel = m_captionLabel;
 - (void)fillViewWithObject:(id)object {
    [super fillViewWithObject:object];
    
-   NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", [NSString stringWithUTF8String: kHostUrl], [object objectForKey:@"url"]]];
+   NSURL *URL = [NSURL URLWithString: [[DSURLHelper sharedURLHelper] absolutePath:[object objectForKey:@"url"]]];
    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
    [NSURLConnection connectionWithRequest:request delegate:self];
    

@@ -336,9 +336,18 @@
       NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
       for (NSIndexPath *indexPath in visiblePaths)
       {
-         DSTripDailyRecord *dailyRecord = [self.tripRecord.dailyRecords objectAtIndex:indexPath.row];
+         UIImage* photo = nil;
+         if (indexPath.row == 0)
+         {
+            photo = self.tripRecord.authorPhoto;
+         }
+         else
+         {
+            DSTripDailyRecord *dailyRecord = [self.tripRecord.dailyRecords objectAtIndex:indexPath.row -1];
+            photo = dailyRecord.photo;
+         }
          
-         if (!dailyRecord.photo) // avoid the app icon download if the app already has an icon
+         if (!photo) // avoid the app icon download if the app already has an icon
          {
             [self startIconDownload:indexPath];
          }

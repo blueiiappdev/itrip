@@ -72,6 +72,7 @@
 
 @property(nonatomic, retain) NSMutableArray* dailyRecords;
 
++(NSDate*) stringToDate:(NSString*)string;
 -(id) initWithMap:(NSDictionary*)map;
 -(void) addDialyRecord:(DSTripDailyRecord*) dailyRecord;
 

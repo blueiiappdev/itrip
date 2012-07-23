@@ -26,7 +26,7 @@ favCount = m_favCount;
    {
       self.tid = [map objectForKey:@"id"];
       self.title = [map objectForKey:@"title"];
-      self.date = [map objectForKey:@"date"];
+      self.date = [DSTripRecord stringToDate:[map objectForKey:@"date"]];
       self.intro = [map objectForKey:@"intro"];
       self.photoUrl = [map objectForKey:@"photoUrl"];
       self.commentCount = [[map objectForKey:@"commentCount"] intValue];
@@ -75,8 +75,8 @@ dailyRecords = m_dailyRecords;
       self.authorId = [map objectForKey:@"authorId"];
       self.authorName = [map objectForKey:@"authorName"];
       self.authorPhotoUrl = [map objectForKey:@"authorPhotoUrl"];
-      self.start = [map objectForKey:@"start"];
-      self.end = [map objectForKey:@"end"];
+      self.start = [DSTripRecord stringToDate:[map objectForKey:@"start"]];
+      self.end = [DSTripRecord stringToDate:[map objectForKey:@"end"]];
       self.days = [[map objectForKey:@"days"] intValue];
       self.commentCount = [[map objectForKey:@"commentCount"] intValue];
       self.favCount = [[map objectForKey:@"favCount"] intValue];
@@ -109,6 +109,17 @@ dailyRecords = m_dailyRecords;
 
 -(void) addDialyRecord:(DSTripDailyRecord *)dailyRecord {
    [m_dailyRecords addObject:dailyRecord];
+}
+
++(NSDate*) stringToDate:(NSString *)string {
+   static NSDateFormatter *formatter = nil;
+   if (!formatter) {
+      formatter = [[NSDateFormatter alloc] init];
+      [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+//      [formatter setDateFormat:@"yyyy-MM-ddTHH:mm:ss.SSSZ"];
+      [formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss.SSS'Z'"];
+   }
+   return [formatter dateFromString:string];
 }
 
 @end

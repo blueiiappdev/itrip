@@ -88,6 +88,7 @@
 - (void)showTableCell:(UITableViewCell*)cell indexPath:(NSIndexPath*) indexPath;
 - (void)showImage:(UIImageView*)imageView onCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexPath;
 
+- (NSString*)dateToString:(NSDate*)date;
 @end
 
 @implementation TripDetailController
@@ -238,7 +239,8 @@
 
 -(void)showHeaderCell:(UITableViewCell*) cell indexPath:(NSIndexPath*)indexPath {
    DSTripRecord *tripRecord = self.tripRecord;
-   NSString* dateStr = [NSDateFormatter localizedStringFromDate:tripRecord.start dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+   NSString* dateStr = [self dateToString:tripRecord.start]; // [NSDateFormatter localizedStringFromDate:tripRecord.start dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+   NSLog(@"dateStr=%@, realDate=%@", dateStr, tripRecord.start);
    ((UILabel*) [cell viewWithTag:kDateTagInCell]).text = dateStr;
    ((UILabel*) [cell viewWithTag:kTitleTagInCell]).text = tripRecord.title;
    ((UILabel*) [cell viewWithTag:kAuthorTagInCell]).text = tripRecord.authorName;
@@ -252,7 +254,8 @@
 -(void)showTableCell:(UITableViewCell*) cell indexPath:(NSIndexPath *)indexPath {
    DSTripDailyRecord *dailyRecord = [self.tripRecord.dailyRecords objectAtIndex:indexPath.row-1];
    
-   NSString* dateStr = [NSDateFormatter localizedStringFromDate:dailyRecord.date dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+   NSString* dateStr = [self dateToString:dailyRecord.date]; // [NSDateFormatter localizedStringFromDate:dailyRecord.date dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+   NSLog(@"dateStr=%@, realDate=%@", dateStr, dailyRecord.date);
    ((UILabel*) [cell viewWithTag:kDateTagInCell]).text = dateStr;
    ((UILabel*) [cell viewWithTag:kIntroTagInCell]).text = dailyRecord.intro;
    ((UILabel*) [cell viewWithTag:kTitleTagInCell]).text = dailyRecord.title;
@@ -260,6 +263,17 @@
    ((UILabel*) [cell viewWithTag:kCommentCountTagInCell]).text = [NSString stringWithFormat:@"%d", dailyRecord.commentCount];
    
    [self showImage:(UIImageView*)[cell viewWithTag:kImageTagInCell] onCell:cell indexPath:indexPath];
+}
+
+- (NSString*) dateToString:(NSDate *)date {
+   static NSDateFormatter *formatter = nil;
+   if (!formatter) {
+      formatter = [[NSDateFormatter alloc] init];  
+      [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+      formatter.dateStyle = NSDateFormatterShortStyle;
+      formatter.timeStyle = NSDateFormatterShortStyle;
+   }
+   return [formatter stringFromDate:date];
 }
 
 - (void)showImage:(UIImageView *)imageView onCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {

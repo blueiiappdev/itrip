@@ -70,9 +70,10 @@
 
 @property (nonatomic, retain) NSString* tripId;
 @property (assign, nonatomic) IBOutlet UITableViewCell *headerCell;
+@property (assign, nonatomic) IBOutlet UITableViewCell *tableCell;
 @property (nonatomic, retain) DSTripRecord* tripRecord;
 @property (nonatomic, retain) NSMutableDictionary *imageDownloadsInProgress;
 
-- (void)appImageDidLoad:(NSIndexPath *)indexPath;
+- (void)appImageDidLoad:(UIImage*)image indexPath:(NSIndexPath *)indexPath;
 
 @end

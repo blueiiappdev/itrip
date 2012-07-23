@@ -59,7 +59,7 @@
 
 @implementation IconDownloader
 
-@synthesize dailyRecord;
+@synthesize imageUrl = m_imageUrl;
 @synthesize indexPathInTableView;
 @synthesize delegate;
 @synthesize activeDownload;
@@ -69,7 +69,7 @@
 
 - (void)dealloc
 {
-    [dailyRecord release];
+    [m_imageUrl release];
     [indexPathInTableView release];
     
     [activeDownload release];
@@ -84,8 +84,7 @@
 {
     self.activeDownload = [NSMutableData data];
     // alloc+init and start an NSURLConnection; release on completion/failure
-   NSString* urlStr = [[DSURLHelper sharedURLHelper] absolutePath:dailyRecord.photoUrl];
-   NSURL* url = [NSURL URLWithString:urlStr];
+   NSURL* url = [NSURL URLWithString:self.imageUrl];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:
                              [NSURLRequest requestWithURL:url] delegate:self];
     self.imageConnection = conn;
@@ -122,18 +121,18 @@
     // Set appIcon and clear temporary data/image
     UIImage *image = [[UIImage alloc] initWithData:self.activeDownload];
     
-    if (image.size.width != kAppIconHeight && image.size.height != kAppIconHeight)
-	{
-        CGSize itemSize = CGSizeMake(kAppIconHeight, kAppIconHeight);
-		UIGraphicsBeginImageContext(itemSize);
-		CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-		[image drawInRect:imageRect];
-		self.dailyRecord.photo = UIGraphicsGetImageFromCurrentImageContext();
-		UIGraphicsEndImageContext();
-    }
-    else
+//    if (image.size.width != kAppIconHeight && image.size.height != kAppIconHeight)
+//	{
+//        CGSize itemSize = CGSizeMake(kAppIconHeight, kAppIconHeight);
+//		UIGraphicsBeginImageContext(itemSize);
+//		CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+//		[image drawInRect:imageRect];
+//		[delegate appImageDidLoad:UIGraphicsGetImageFromCurrentImageContext() indexPath:self.indexPathInTableView];
+//		UIGraphicsEndImageContext();
+//    }
+//    else
     {
-        self.dailyRecord.photo = image;
+       [delegate appImageDidLoad:image indexPath:self.indexPathInTableView];
     }
     
     self.activeDownload = nil;
@@ -141,10 +140,7 @@
     
     // Release the connection now that it's finished
     self.imageConnection = nil;
-        
-    // call our delegate and tell it that our icon is ready for display
-    [delegate appImageDidLoad:self.indexPathInTableView];
-}
+   }
 
 @end
 

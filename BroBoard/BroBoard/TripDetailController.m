@@ -62,8 +62,18 @@
 #import "DSURLHelper.h"
 #import "JSONKit.h"
 
-#define kCustomRowHeight    260.0
+#define kCustomRowHeight    300
 #define kCustomRowCount     7
+
+#define kTitleTagInCell             20
+#define kImageTagInCell             21
+#define kDateTagInCell              22
+#define kIntroTagInCell             23
+#define kAuthorTagInCell            24
+#define kDaysTagInCell              25
+#define kAddressTagInCell           26
+#define kFavCountTagInCell          10
+#define kCommentCountTagInCell      11
 
 #pragma mark -
 
@@ -72,7 +82,11 @@
 - (void)requestFinished:(ASIHTTPRequest *)request;
 - (void)requestFailed:(ASIHTTPRequest *)request;
 
-- (void)startIconDownload:(DSTripDailyRecord *)dailyRecord forIndexPath:(NSIndexPath *)indexPath;
+- (void)startIconDownload:(NSIndexPath *)indexPath;
+
+- (void)showHeaderCell:(UITableViewCell*)cell indexPath:(NSIndexPath*) indexPath;
+- (void)showTableCell:(UITableViewCell*)cell indexPath:(NSIndexPath*) indexPath;
+- (void)showImage:(UIImageView*)imageView onCell:(UITableViewCell*)cell indexPath:(NSIndexPath*)indexPath;
 
 @end
 
@@ -81,6 +95,7 @@
 @synthesize tripRecord = m_tripRecord;
 @synthesize tripId = m_tripId;
 @synthesize headerCell;
+@synthesize tableCell;
 @synthesize imageDownloadsInProgress;
 
 
@@ -143,7 +158,7 @@
       return 0;
    }
    
-	int count = [m_tripRecord.dailyRecords count];
+	int count = [m_tripRecord.dailyRecords count] + 1;
 	
 	// ff there's no data yet, return enough rows to fill the screen
    if (count == 0)
@@ -163,7 +178,7 @@
 	// customize the appearance of table view cells
 	//
 	static NSString *CellIdentifier = @"LazyTableCell";
-   static NSString *CellIdentifier2 = @"LazyTableCell2";
+   static NSString *HeaderCellIndentifier = @"HeaderCellIndentifier";
    static NSString *PlaceholderCellIdentifier = @"PlaceholderCell";
    
    // add a placeholder cell while waiting on table data
@@ -185,88 +200,126 @@
 		return cell;
    }
 	
-   UITableViewCell *cell = indexPath.row > 0 ? [tableView dequeueReusableCellWithIdentifier:CellIdentifier] : [tableView dequeueReusableCellWithIdentifier:CellIdentifier2];
-   UILabel *textLabel2, *detailTextLabel2;
-   UIImageView *imageView2;
+   UITableViewCell *cell = indexPath.row > 0 ? [tableView dequeueReusableCellWithIdentifier:CellIdentifier] : [tableView dequeueReusableCellWithIdentifier:HeaderCellIndentifier];
+   
    if (cell == nil)
 	{
       cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                      reuseIdentifier:CellIdentifier] autorelease];
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
       
-      int width = self.view.bounds.size.width;
-      
       //for 0th cell
-      if (indexPath.row == 0) {
+      if (indexPath.row == 0) 
+      {
          [[NSBundle mainBundle] loadNibNamed:@"DetailTripHeaderCell" owner:self options:nil];
          cell = self.headerCell;
          self.headerCell = nil;
       }
-      else {
-         //for normal cell
-         
-         imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, 200)];
-         imageView2.tag = 1;
-         
-         textLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, width, 25)];
-         textLabel2.tag = 2;
-         
-         detailTextLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(0, 230, width, 25)];
-         detailTextLabel2.tag = 3;
-         
-         [cell addSubview:imageView2];
-         [cell addSubview:textLabel2];
-         [cell addSubview:detailTextLabel2];
-         
-         [imageView2 release];
-         [textLabel2 release];
-         [detailTextLabel2 release];         
+      else 
+      {
+         [[NSBundle mainBundle] loadNibNamed:@"TripDetailTableCell" owner:self options:nil];
+         cell = self.tableCell;
+         self.tableCell = nil;       
       }
    }
    
    // Leave cells empty if there's no data yet
-   if (nodeCount > 0)
+   if (self.tripRecord != nil)
 	{
-      DSTripDailyRecord *dailyRecord = [self.tripRecord.dailyRecords objectAtIndex:indexPath.row];
-      
-      imageView2 = (UIImageView*)[cell viewWithTag:1];
-      textLabel2 = (UILabel*) [cell viewWithTag:2];
-      detailTextLabel2 = (UILabel*) [cell viewWithTag:3];
-      
-		textLabel2.text = dailyRecord.title;
-      detailTextLabel2.text = dailyRecord.intro;
-		
-      // Only load cached images; defer new downloads until scrolling ends
-      if (!dailyRecord.photo)
-      {
-         if (self.tableView.dragging == NO && self.tableView.decelerating == NO)
-         {
-            [self startIconDownload:dailyRecord forIndexPath:indexPath];
-         }
-         // if a download is deferred or in progress, return a placeholder image
-         imageView2.image = [UIImage imageNamed:@"Placeholder.png"];                
+      if (indexPath.row == 0) {
+         [self showHeaderCell:cell indexPath:indexPath];
+      } else {
+         [self showTableCell:cell indexPath:indexPath];
       }
-      else
-      {
-         imageView2.image = dailyRecord.photo;
-      }
-      
    }
    
    return cell;
+}
+
+-(void)showHeaderCell:(UITableViewCell*) cell indexPath:(NSIndexPath*)indexPath {
+   DSTripRecord *tripRecord = self.tripRecord;
+   NSString* dateStr = [NSDateFormatter localizedStringFromDate:tripRecord.start dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+   ((UILabel*) [cell viewWithTag:kDateTagInCell]).text = dateStr;
+   ((UILabel*) [cell viewWithTag:kTitleTagInCell]).text = tripRecord.title;
+   ((UILabel*) [cell viewWithTag:kAuthorTagInCell]).text = tripRecord.authorName;
+   ((UILabel*) [cell viewWithTag:kFavCountTagInCell]).text = [NSString stringWithFormat:@"%d", tripRecord.favCount];
+   ((UILabel*) [cell viewWithTag:kCommentCountTagInCell]).text = [NSString stringWithFormat:@"%d", tripRecord.commentCount];
+   ((UILabel*) [cell viewWithTag:kDaysTagInCell]).text = [NSString stringWithFormat:@"%d", tripRecord.days];
+   
+   [self showImage:(UIImageView*)[cell viewWithTag:kImageTagInCell] onCell:cell indexPath:indexPath];
+}
+
+-(void)showTableCell:(UITableViewCell*) cell indexPath:(NSIndexPath *)indexPath {
+   DSTripDailyRecord *dailyRecord = [self.tripRecord.dailyRecords objectAtIndex:indexPath.row-1];
+   
+   NSString* dateStr = [NSDateFormatter localizedStringFromDate:dailyRecord.date dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+   ((UILabel*) [cell viewWithTag:kDateTagInCell]).text = dateStr;
+   ((UILabel*) [cell viewWithTag:kIntroTagInCell]).text = dailyRecord.intro;
+   ((UILabel*) [cell viewWithTag:kTitleTagInCell]).text = dailyRecord.title;
+   ((UILabel*) [cell viewWithTag:kFavCountTagInCell]).text = [NSString stringWithFormat:@"%d", dailyRecord.favCount];
+   ((UILabel*) [cell viewWithTag:kCommentCountTagInCell]).text = [NSString stringWithFormat:@"%d", dailyRecord.commentCount];
+   
+   [self showImage:(UIImageView*)[cell viewWithTag:kImageTagInCell] onCell:cell indexPath:indexPath];
+}
+
+- (void)showImage:(UIImageView *)imageView onCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
+   UIImage* photo = nil;
+   NSString* url = nil;
+   if (indexPath.row == 0)
+   {
+      photo = self.tripRecord.authorPhoto;
+      if (self.tripRecord.authorPhotoUrl)
+      {
+         url = [[DSURLHelper sharedURLHelper] absolutePath:self.tripRecord.authorPhotoUrl];
+      }
+   }
+   else
+   {
+      DSTripDailyRecord *dailyRecord = [self.tripRecord.dailyRecords objectAtIndex:indexPath.row-1];
+      photo = dailyRecord.photo;
+      url = [[DSURLHelper sharedURLHelper] absolutePath:dailyRecord.photoUrl];
+   }
+   
+   // Only load cached images; defer new downloads until scrolling ends
+   if (!photo)
+   {
+      if (self.tableView.dragging == NO && self.tableView.decelerating == NO)
+      {
+         [self startIconDownload:indexPath];
+      }
+      // if a download is deferred or in progress, return a placeholder image
+      imageView.image = [UIImage imageNamed:@"Placeholder.png"];                
+   }
+   else
+   {
+      imageView.image = photo;
+   }
 }
 
 
 #pragma mark -
 #pragma mark Table cell image support
 
-- (void)startIconDownload:(DSTripDailyRecord *)dailyRecord forIndexPath:(NSIndexPath *)indexPath
+- (void)startIconDownload:(NSIndexPath *)indexPath
 {
    IconDownloader *iconDownloader = [imageDownloadsInProgress objectForKey:indexPath];
    if (iconDownloader == nil) 
    {
+      NSString* url = nil;
+      if (indexPath.row == 0)
+      {
+         if (self.tripRecord.authorPhotoUrl)
+         {
+            url = [[DSURLHelper sharedURLHelper] absolutePath:self.tripRecord.authorPhotoUrl];
+         }
+      }
+      else
+      {
+         DSTripDailyRecord *dailyRecord = [self.tripRecord.dailyRecords objectAtIndex:indexPath.row-1];
+         url = [[DSURLHelper sharedURLHelper] absolutePath:dailyRecord.photoUrl];
+      }
       iconDownloader = [[IconDownloader alloc] init];
-      iconDownloader.dailyRecord = dailyRecord;
+      iconDownloader.imageUrl = url;
       iconDownloader.indexPathInTableView = indexPath;
       iconDownloader.delegate = self;
       [imageDownloadsInProgress setObject:iconDownloader forKey:indexPath];
@@ -287,26 +340,30 @@
          
          if (!dailyRecord.photo) // avoid the app icon download if the app already has an icon
          {
-            [self startIconDownload:dailyRecord forIndexPath:indexPath];
+            [self startIconDownload:indexPath];
          }
       }
    }
 }
 
 // called by our ImageDownloader when an icon is ready to be displayed
-- (void)appImageDidLoad:(NSIndexPath *)indexPath
+- (void)appImageDidLoad:(UIImage*)image indexPath:(NSIndexPath *)indexPath
 {
    IconDownloader *iconDownloader = [imageDownloadsInProgress objectForKey:indexPath];
    if (iconDownloader != nil)
    {
       UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:iconDownloader.indexPathInTableView];
-      
-      // Display the newly loaded image
-//      cell.imageView.image = iconDownloader.dailyRecord.appIcon;
-      
-      //added by ramon
-      UIImageView* imageView2 = (UIImageView*)[cell viewWithTag:1];
-      imageView2.image = iconDownloader.dailyRecord.photo;
+      UIImageView* imageView2 = (UIImageView*)[cell viewWithTag:kImageTagInCell];
+      imageView2.image = image;
+      if (indexPath.row == 0) 
+      {
+         self.tripRecord.authorPhoto = image;
+      }
+      else 
+      {
+         DSTripDailyRecord *dailyRecord = [self.tripRecord.dailyRecords objectAtIndex:(indexPath.row-1)];
+         dailyRecord.photo = image;
+      }
    }
 }
 

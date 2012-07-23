@@ -10,7 +10,6 @@
 #import "LoadingMoreFooterView.h"
 #import "PSBroView.h"
 #import "JSONKit.h"
-#import "DSTripDetailViewController.h"
 #import "TripDetailController.h"
 #import "DSURLHelper.h"
 

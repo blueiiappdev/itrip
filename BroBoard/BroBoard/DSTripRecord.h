@@ -43,6 +43,8 @@
    
    NSString*         m_authorId;
    NSString*         m_authorName;
+   NSString*         m_authorPhotoUrl;
+   UIImage*         m_authorPhoto;
    
    NSDate*           m_start;
    NSDate*           m_end;
@@ -59,6 +61,8 @@
 @property(nonatomic, retain) NSString*    address;
 @property(nonatomic, retain) NSString*    authorId;
 @property(nonatomic, retain) NSString*    authorName;
+@property(nonatomic, retain) NSString*    authorPhotoUrl;
+@property(nonatomic, retain) UIImage*     authorPhoto;
 @property(nonatomic, retain) NSDate*      start;
 @property(nonatomic, retain) NSDate*      end;
 

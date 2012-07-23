@@ -57,7 +57,7 @@
 
 @interface IconDownloader : NSObject
 {
-    DSTripDailyRecord *dailyRecord;
+   NSString* m_imageUrl;
     NSIndexPath *indexPathInTableView;
     id <IconDownloaderDelegate> delegate;
     
@@ -65,7 +65,7 @@
     NSURLConnection *imageConnection;
 }
 
-@property (nonatomic, retain) DSTripDailyRecord *dailyRecord;
+@property (nonatomic, retain) NSString *imageUrl;
 @property (nonatomic, retain) NSIndexPath *indexPathInTableView;
 @property (nonatomic, assign) id <IconDownloaderDelegate> delegate;
 
@@ -79,6 +79,6 @@
 
 @protocol IconDownloaderDelegate 
 
-- (void)appImageDidLoad:(NSIndexPath *)indexPath;
+- (void)appImageDidLoad:(UIImage*)image indexPath:(NSIndexPath *)indexPath;
 
 @end
